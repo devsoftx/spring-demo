@@ -10,6 +10,7 @@ import pe.gastobien.app.layer.service.interfaces.CategoryService;
 
 @Service
 public class CategoryServiceImp implements CategoryService {
+	
 	@Autowired
 	private CategoryDao dao;
 

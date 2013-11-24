@@ -9,6 +9,11 @@
 		<managed-bean-class>pe.gastobien.app.beans.LoginBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>homeBean</managed-bean-name>
+		<managed-bean-class>pe.gastobien.app.beans.HomeBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
 	<application>
 		<el-resolver>
 			org.springframework.web.jsf.el.SpringBeanFacesELResolver
