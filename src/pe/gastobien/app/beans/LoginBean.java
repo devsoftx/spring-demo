@@ -1,10 +1,15 @@
 package pe.gastobien.app.beans;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import pe.gastobien.app.domain.Category;
+import pe.gastobien.app.domain.User;
+import pe.gastobien.app.layer.service.interfaces.CategoryService;
 import pe.gastobien.app.layer.service.interfaces.UserService;
 
 @Component
@@ -12,6 +17,9 @@ public class LoginBean implements Serializable{
 	
 	@Autowired
 	private UserService service;
+	
+	@Autowired
+	private CategoryService categoryService;
 	
 	private static final long serialVersionUID = 1L;
 
@@ -47,9 +55,13 @@ public class LoginBean implements Serializable{
 		String destino = "";
 		try {
 			service.Authenticate(userName, password);
+			User user = service.getUserByLogin(userName);
+			HttpServletRequest request = (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
+			List<Category> categories = categoryService.getCategories(user.getUserID(), 2013, 11);
+			request.setAttribute("categories", categories);
 			destino = "main";
 		} catch (Exception e) {
-			FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Datos incorrectos. " + e.getMessage(), e.getMessage());
+			FacesMessage msg = new FacesMessage(String.format("Error: %s", e.getMessage()));
 			FacesContext.getCurrentInstance().addMessage(null, msg);
 			destino = "login";
 		}

@@ -7,13 +7,13 @@
 <h:head>
 
 </h:head>
-<h:body>
+<h:body onload="#{homeBean.init()}">
 	<h:form>
 		<h:panelGrid columns="4" cellpadding="5">
 			<p:tabView id="tabView" var="category" value="#{homeBean.categories}">
 				<p:tab id="playerTab" title="#{category.categoryName}">
 					<h:panelGrid columns="2" cellpadding="10">
-
+					
 					</h:panelGrid>
 				</p:tab>
 			</p:tabView>
