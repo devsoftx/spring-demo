@@ -13,7 +13,24 @@
 			<p:tabView id="tabView" var="category" value="#{homeBean.categories}">
 				<p:tab id="playerTab" title="#{category.categoryName}">
 					<h:panelGrid columns="2" cellpadding="10">
-					
+						<p:dataTable id="details" var="item" value="#{homeBean.details}" 
+							rowKey="#{item.detalleCategoriaId}"
+							selection="#{homeBean.detail}" selectionMode="single">
+							<p:column headerText="Category Detail Name">  
+            #{category.categoryNameDetail}  
+        </p:column>
+
+							<p:column headerText="Category Detail Description">  
+            #{category.categoryDescriptionDetail}  
+        </p:column>
+
+							<p:column headerText="Amount">  
+            #{category.amountToShow}  
+        </p:column>
+
+
+
+						</p:dataTable>
 					</h:panelGrid>
 				</p:tab>
 			</p:tabView>
