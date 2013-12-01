@@ -40,7 +40,7 @@ public class HomeBean implements Serializable{
 			List<CategoryDetail> details = detailService.getCategoryDetailByCategoryId(1);
 			setDetails(details);
 		}		
-	}	
+	}
 
 	public List<CategoryDetail> getDetails() {
 		return details;
