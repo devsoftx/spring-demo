@@ -17,8 +17,6 @@ public class CategoryDetailDaoImp implements CategoryDetailDao {
 
 	@Override
 	public void save(CategoryDetail t) {
-		// TODO Auto-generated method stub
-		// TODO Auto-generated method stub
 		Connection cn = null;
 		try {
 			cn = AccesoDB.getConnection();
@@ -43,14 +41,11 @@ public class CategoryDetailDaoImp implements CategoryDetailDao {
 
 	@Override
 	public void update(CategoryDetail t) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void delete(CategoryDetail t) {
-		// TODO Auto-generated method stub
-		// TODO Auto-generated method stub
 		Connection cn = null;
 		try {
 			cn = AccesoDB.getConnection();
@@ -68,13 +63,11 @@ public class CategoryDetailDaoImp implements CategoryDetailDao {
 
 	@Override
 	public CategoryDetail getById(CategoryDetail t) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public List<CategoryDetail> getAll(CategoryDetail t) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

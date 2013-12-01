@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import pe.gastobien.app.domain.CategoryDetail;
 import pe.gastobien.app.layer.dao.interfaces.CategoryDetailDao;
+import pe.gastobien.app.layer.service.interfaces.CategoryDetailService;
 
 @Service
-public class CategoryDetailServiceImp {
+public class CategoryDetailServiceImp implements CategoryDetailService {
 
 	@Autowired
 	private CategoryDetailDao dao;

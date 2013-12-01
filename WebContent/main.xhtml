@@ -7,32 +7,24 @@
 <h:head>
 
 </h:head>
-<h:body onload="#{homeBean.init()}">
+<h:body>
 	<h:form>
 		<h:panelGrid columns="4" cellpadding="5">
 			<p:tabView id="tabView" var="category" value="#{homeBean.categories}">
-				<p:tab id="playerTab" title="#{category.categoryName}">
-					<h:panelGrid columns="2" cellpadding="10">
-						<p:dataTable id="details" var="item" value="#{homeBean.details}" 
-							rowKey="#{item.detalleCategoriaId}"
-							selection="#{homeBean.detail}" selectionMode="single">
-							<p:column headerText="Category Detail Name">  
-            #{category.categoryNameDetail}  
-        </p:column>
-
-							<p:column headerText="Category Detail Description">  
-            #{category.categoryDescriptionDetail}  
-        </p:column>
-
-							<p:column headerText="Amount">  
-            #{category.amountToShow}  
-        </p:column>
-
-
-
-						</p:dataTable>
-					</h:panelGrid>
+				<p:tab id="categoryTab" title="#{category.categoryName}">					
+					<p:dataTable id="table" var="item" value="#{homeBean.details}">
+						<p:column headerText="Category Detail Name">  
+				            #{item.categoryNameDetail}  
+				        </p:column>
+						<p:column headerText="Category Detail Description">  
+				            #{item.categoryDescriptionDetail}  
+				        </p:column>
+						<p:column headerText="Amount">  
+				            #{item.amountToShow}  
+				        </p:column>
+					</p:dataTable>					
 				</p:tab>
+
 			</p:tabView>
 		</h:panelGrid>
 	</h:form>
